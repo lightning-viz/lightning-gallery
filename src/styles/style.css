@@ -1,0 +1,94 @@
+.gallery-viz img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-viz .gallery-thumbnail {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 10%;
+}
+
+.gallery-viz .gallery-thumbnail:not(:first-child) {
+  margin-left: 10px;
+}
+
+.gallery-viz .leaflet-container img.leaflet-image-layer {
+  max-width: none !important;
+}
+
+.gallery-viz .image-map .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-shadow: inset -100px 0 100px -100px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  z-index: 2001;
+}
+
+.gallery-viz .image-map g path {
+  transition: all 0.25s;
+  stroke-width: 4px;
+  stroke-opacity: 1;
+  stroke: white;
+  position: absolute;
+  z-index: 1001;
+  fill: white;
+  fill-opacity: .6;
+  -webkit-filter: none;
+}
+
+.gallery-viz .image-map.mode-delete path {
+  cursor: no-drop;
+}
+
+.gallery-viz .image-map.mode-delete path:hover {
+  fill: #4d4d4d !important;
+}
+
+.gallery-viz .image-map div.polygon-elbow {
+  -webkit-transition: opacity 0.25s;
+  box-shadow: 0 0 0 2px white, 0 0 10px rgba(0, 0, 0, 0.35);
+  border: 5px solid #b4b4b4;
+  border-radius: 10px;
+  transition: opacity 0.25s;
+  cursor: move;
+  opacity: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.gallery-viz .image-map div.polygon-elbow.non-polygon {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  border: 5px solid darkgray;
+}
+
+.gallery-viz .image-map.mode-edit div.polygon-elbow {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.gallery-viz .image-map svg.tracer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2001;
+  pointer-events: none;
+}
+
+.gallery-viz .mouse-line {
+  stroke: white;
+  stroke-width: 2;
+  opacity: 1.0;
+}
+
+.gallery-viz .image-map.mode-create {
+  cursor: crosshair;
+}

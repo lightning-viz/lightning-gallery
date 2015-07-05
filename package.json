@@ -1,0 +1,27 @@
+{
+  "name": "lightning-gallery",
+  "version": "0.0.0",
+  "dependencies": {
+    "lightning-client-utils": "^0.6.3",
+    "lightning-visualization": "0.0.6",
+    "lodash": "^3.10.0"
+  },
+  "keywords": [
+    "lightning-visualization"
+  ],
+  "devDependencies": {
+    "brfs": "^1.4.0",
+    "browserify": "^10.2.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "lightning": {
+    "sampleData": []
+  }
+}
