@@ -1,6 +1,6 @@
 {
   "name": "lightning-gallery",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "lightning-client-utils": "^0.6.3",
     "lightning-visualization": "0.0.6",
@@ -15,6 +15,10 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightning-viz/lightning-gallery.git"
   },
   "browserify": {
     "transform": [
