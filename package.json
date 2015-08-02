@@ -1,6 +1,6 @@
 {
   "name": "lightning-gallery",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "lightning-client-utils": "^0.6.3",
     "lightning-visualization": "0.0.6",
