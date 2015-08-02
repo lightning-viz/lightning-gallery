@@ -2,8 +2,9 @@
   "name": "lightning-gallery",
   "version": "0.0.3",
   "dependencies": {
+    "brfs": "^1.4.0",
     "lightning-client-utils": "^0.6.3",
-    "lightning-visualization": "0.0.6",
+    "lightning-visualization": "0.1.0",
     "lodash": "^3.10.0"
   },
   "keywords": [

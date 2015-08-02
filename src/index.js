@@ -5,7 +5,7 @@ var ImageViz = require('lightning-image');
 var _ = require('lodash');
 
 var fs = require('fs');
-var styles = fs.readFileSync(__dirname + '/styles/style.css');
+var css = fs.readFileSync(__dirname + '/style.css');
 var template = _.template(fs.readFileSync(__dirname + '/templates/index.html'));
 
 
@@ -15,12 +15,13 @@ var template = _.template(fs.readFileSync(__dirname + '/templates/index.html'));
 var Visualization = LightningVisualization.extend({
 
     currentImage: 0,
-    styles: styles,
 
     init: function() {
         this.$el = $(this.selector).first();
         this.render();
     },
+
+    css: css,
 
     render: function() {
         var markup = template({        
