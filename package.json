@@ -3,7 +3,9 @@
   "version": "0.0.7",
   "dependencies": {
     "brfs": "^1.4.0",
-    "lightning-client-utils": "^0.6.3",
+    "jquery": "^2.1.4",
+    "lightning-client-utils": "^0.7.5",
+    "lightning-image": "0.0.8",
     "lightning-visualization": "^0.1.0",
     "lodash": "^3.10.0"
   },

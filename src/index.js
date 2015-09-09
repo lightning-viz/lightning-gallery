@@ -3,11 +3,11 @@
 var LightningVisualization = require('lightning-visualization');
 var ImageViz = require('lightning-image');
 var _ = require('lodash');
-
+var $ = require('jquery');
 var fs = require('fs');
 var css = fs.readFileSync(__dirname + '/style.css');
 var template = _.template(fs.readFileSync(__dirname + '/templates/index.html'));
-
+var utils = require('lightning-client-utils');
 
 /*
  * Extend the base visualization object
@@ -17,15 +17,18 @@ var Visualization = LightningVisualization.extend({
     currentImage: 0,
 
     init: function() {
-        this.$el = $(this.selector).first();
+        this.images = this.images.map(utils.cleanImageURL);
+        this.$el = $(this.el);
         this.render();
     },
 
     css: css,
 
     render: function() {
+
         var markup = template({        
             images: this.images,
+            utils: utils,
             currentImage: this.currentImage
         });
 
@@ -36,7 +39,7 @@ var Visualization = LightningVisualization.extend({
             self.setImage(self.$el.find('.gallery-thumbnail').index(this));
         });
 
-        this.imageViz = new ImageViz(this.selector + ' .image-container', [], [this.images[0]], {width: this.$el.width() || 400});    
+        this.imageViz = new ImageViz(this.selector + ' .image-container', [], [this.images[0]], {width: this.width || 400});
 
         this.imageViz.on('image:loaded', function() {
             self.emit('image:loaded');
@@ -70,7 +73,6 @@ var Visualization = LightningVisualization.extend({
         } else {
             this.addImage(formattedData);
         }
-
     }
 
 });
